@@ -3,6 +3,7 @@ $lightColors:(
     textcol: #545454,
     links: #de4c4f,
     lists: #e06e73,
+    lists: #479b4e,
     headers:#333, 
     highlights: #e5ffc0,
     navbar: #1F1F22
@@ -18,7 +19,20 @@ $darkColors:(
     navbar: #2067a0
 );
 
-$theme: $lightColors;
+@mixin theme-colors($light-theme: true) {
+    @if $light-theme {
+        $theme: $lightColors
+    } @else {
+        $theme: $darkColors
+    }
+  }
+  @mixin theme-colors($dark-theme: true) {
+    @if $dark-theme {
+        $theme: $darkColors
+    } @else {
+        $theme: $lightColors
+    }
+  }
 
 @function color($color-name){
     @return map-get($theme, $color-name)
@@ -360,70 +374,57 @@ video {
     height: auto;
   }
   
-  
-  
-   /* The switch - the box around the slider */
-   .switch {
-    position: relative;
-    display: inline-block;
-    width: 30px;
-    height: 17px;
-  }
-  
-  /* Hide default HTML checkbox */
-  .switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-  }
-  
-  /* The slider */
-  .slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #ccc;
-    -webkit-transition: .4s;
-    transition: .4s;
-  }
-  
-  .slider:before {
-    position: absolute;
-    content: "";
-    height: 13px;
-    width: 13px;
-    left: 2px;
-    bottom: 2px;
-    background-color: white;
-    -webkit-transition: .4s;
-    transition: .4s;
-  }
-  
-  input:checked + .slider {
-    background-color: color(links);
-  }
-  
-  input:focus + .slider {
-    box-shadow: 0 0 1px #2196F3;
-  }
-  
-  input:checked + .slider:before {
-    -webkit-transform: translateX(13px);
-    -ms-transform: translateX(13px);
-    transform: translateX(13px);
-  }
-  
-  /* Rounded sliders */
-  .slider.round {
-    border-radius: 34px;
-  }
-  
-  .slider.round:before {
-    border-radius: 50%;
-  } 
+
+    input[type=checkbox]{
+        height: 0;
+        width: 0;
+        visibility: hidden;
+    }
+
+    label {
+        cursor: pointer;
+        text-indent: -9999px;
+        width: 200px;
+        height: 100px;
+        background: grey;
+        display: block;
+        border-radius: 100px;
+        position: relative;
+    }
+
+    label:after {
+        content: '';
+        position: absolute;
+        top: 5px;
+        left: 5px;
+        width: 90px;
+        height: 90px;
+        background: #fff;
+        border-radius: 90px;
+        transition: 0.3s;
+    }
+
+    input:checked + label {
+        background: #bada55;
+    }
+
+    input:checked + label:after {
+        left: calc(100% - 5px);
+        transform: translateX(-100%);
+    }
+
+    label:active:after {
+        width: 130px;
+    }
+
+    // centering
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
   
   /* Add a black background color to the top navigation */
   .topnav {

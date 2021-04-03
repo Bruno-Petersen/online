@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" data-theme="dark-theme">
     <head>
         <title>How to write Mnemonic Flash Cards</title>
         <meta charset="utf-8" />
@@ -16,10 +16,8 @@
         <a href="#news">News</a>
         <a href="#contact">Contact</a>
         <a href="#about">About</a>
-        <label id="darkMode" class="switch">
-            <input type="checkbox">
-            <span class="slider round"></span>
-          </label>
+
+
       </div> 
     <body>
         <div class="note-wrapper">
@@ -28,7 +26,10 @@
 <hr>
 <p>From: <a href="https://numinous.productions/ttft/">How can we develop transformative tools for thought?</a></p>
 <br>
-
+<div class="toggle-container">
+    <input type="checkbox" id="switch" name="theme"/>
+    <label for="switch">Toggle</label>
+</div>
 <br>
 <h4 id="Andy Matushak - Spaced Repetition">Andy Matushak - Spaced Repetition</h4>
 <ul><li><a href="https://numinous.productions/timeful/">Timeful Texts</a>
@@ -95,6 +96,31 @@
 <blockquote>
 <p>Memory is not an end-goal in itself. It’s embedded in a larger context: things like creative problem-solving, problem-finding, and all the many ways there are of taking action in the world. We suspect the impact of memory systems will vary a lot, depending on their design. They may be used as crutches for people to lean on. Or they may be used to greatly enable people to develop other parts of their cognition. We don’t yet understand very well how to ensure they’re enablers, rather than crutches. But later in the essay we’ll describe some other tools for thought that, when integrated with memory systems, may better enable this transition to more effective action. </p>
 </blockquote>
-        </div>
-    </body>
+</div>
+</body>
+<script async src="toggle.js">
+
+</script>
+    
 </html>
+
+<!-- <script>
+    var checkbox = document.querySelector('input[name=theme]');
+
+        if(checkbox){checkbox.addEventListener('change', function() {
+            if(this.checked) {
+                trans()
+                document.documentElement.setAttribute('data-theme', 'dark')
+            } else {
+                trans()
+                document.documentElement.setAttribute('data-theme', 'light')
+            }
+        })
+
+        let trans = () => {
+            document.documentElement.classList.add('transition');
+            window.setTimeout(() => {
+                document.documentElement.classList.remove('transition')
+            }, 1000)
+        }}
+</script> -->
