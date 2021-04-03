@@ -1,0 +1,454 @@
+$lightColors:(
+    primary: #fcfcfc,
+    textcol: #545454,
+    links: #de4c4f,
+    lists: #e06e73,
+    headers:#333, 
+    highlights: #e5ffc0,
+    navbar: #1F1F22
+);
+
+$darkColors:(
+    primary: #1F1F22,
+    textcol: #CAD7E0,
+    links: #78BBE5,
+    lists: #78BBE5,
+    headers:#CAD7E0, 
+    highlights: #293E8D,
+    navbar: #2067a0
+);
+
+$theme: $lightColors;
+
+@function color($color-name){
+    @return map-get($theme, $color-name)
+}
+
+body {
+    font-family: "AvenirNext-Regular";
+    margin: 0;
+    
+    #bg{
+    clip-path: polygon(100% 0, 100% 82%, 45% 100%, 0 100%, 0 0);
+    background-color: color(primary);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -1;
+
+    }
+}
+
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    font-size: 100%;
+    vertical-align: baseline;
+  }
+  html {
+    line-height: 1;
+  }
+  ul {
+    list-style: none;
+  }
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+  td {
+    text-align: left;
+    font-weight: normal;
+    vertical-align: middle;
+  }
+  q,
+  blockquote {
+    quotes: none;
+  }
+  blockquote:after {
+    content: "";
+    content: none;
+  }
+  a img {
+    border: none;
+  }
+  summary {
+    display: block;
+  }
+  * {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  html {
+    font-size: 87.5%;
+    line-height: 1.57143em;
+  }
+  html {
+    font-size: 24px;
+    line-height: 1.6em;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    background: color(primary);
+    color: color(textcol);
+    text-rendering: optimizeLegibility;
+    font-family: "AvenirNext-Regular";
+  }
+  a {
+    color: color(links);
+    text-decoration: none;
+  }
+  h1 {
+    font-family: "AvenirNext-Medium";
+    color: color(headers);
+    font-size: 1.6em;
+    line-height: 1.3em;
+    margin-bottom: 0.78571em;
+  }
+  h2 {
+    font-family: "AvenirNext-Medium";
+    color: color(headers);
+    font-size: 1.3em;
+    line-height: 1em;
+    margin-bottom: 0.62857em;
+  }
+  h3 {
+    font-family: "AvenirNext-Medium";
+    color: color(headers);
+    font-size: 1.15em;
+    line-height: 1em;
+    margin-bottom: 0.47143em;
+  }
+  p {
+    margin-bottom: 1.57143em;
+    hyphens: auto;
+  }
+  hr {
+    height: 1px;
+    border: 0;
+    background-color: #dedede;
+    margin: -1px auto 1.57143em auto;
+  }
+  ol {
+    margin-bottom: 0.31429em;
+  }
+  ol ol {
+    margin-bottom: 0px;
+  }
+  ol {
+    counter-reset: ol_counter;
+  }
+  ol li:before {
+    content: counter(ol_counter) ".";
+    counter-increment: ol_counter;
+    color: color(lists);
+    text-align: right;
+    display: inline-block;
+    min-width: 1em;
+    margin-right: 0.5em;
+  }
+  b,
+  strong {
+    font-family: "AvenirNext-Bold";
+  }
+  i,
+  em {
+    font-family: "AvenirNext-Italic";
+  }
+  code {
+    font-family: "Menlo-Regular";
+  }
+  .text-overflow-ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  
+  .sf_code_inserted {
+    color: #d33905;
+  }
+  
+  .sf_code_cdata {
+    color: #838383;
+  }
+  .sf_code_boolean {
+    color: #0e73a2;
+  }
+  
+  .sf_code_interpolation {
+    color: #0e73a2;
+  }
+  .sf_code_deleted {
+    color: #1b00ce;
+  }
+  .sf_code_url {
+    color: #920448;
+  }
+  .note-wrapper {
+    max-width: 46em;
+    margin: 0px auto;
+    padding: 1.57143em 3.14286em;
+  }
+  .note-wrapper.spotlight-preview {
+    overflow-x: hidden;
+  }
+  u {
+    text-decoration: none;
+    background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0) 50%,
+      #e06e73 50%
+    );
+    background-repeat: repeat-x;
+    background-size: 2px 2px;
+    background-position: 0 1.05em;
+  }
+  s {
+    color: #878787;
+  }
+  p {
+    margin-bottom: 0.1em;
+  }
+  hr {
+    margin-bottom: 0.7em;
+    margin-top: 0.7em;
+  }
+  ul li {
+    text-indent: -0.35em;
+  }
+  ul li:before {
+    content: "•";
+    color: color(lists);
+    display: inline-block;
+    margin-right: 0.3em;
+  }
+  ul ul {
+    margin-left: 1.25714em;
+  }
+  ol li {
+    text-indent: -1.45em;
+  }
+  ol ol {
+    margin-left: 1.25714em;
+  }
+  blockquote {
+    display: block;
+    margin-left: -1em;
+    padding-left: 0.8em;
+    border-left: 0.2em solid color(lists);
+  }
+  .todo-list ul {
+    margin-left: 1.88571em;
+  }
+  .todo-list li {
+    text-indent: -1.75em;
+  }
+  .todo-list li:before {
+    content: "";
+    display: static;
+    margin-right: 0px;
+  }
+  .todo-checkbox {
+    text-indent: -1.7em;
+  }
+  .todo-checkbox svg {
+    margin-right: 0.3em;
+    position: relative;
+    top: 0.2em;
+  }
+  .todo-checkbox svg #check {
+    display: none;
+  }
+  .todo-checkbox.todo-checked #check {
+    display: inline;
+  }
+  .todo-checkbox.todo-checked + .todo-text {
+    text-decoration: line-through;
+    color: #878787;
+  }
+  .code-inline {
+    display: inline;
+    background: white;
+    border: solid 1px #dedede;
+    padding: 0.2em 0.5em;
+    font-size: 0.9em;
+  }
+  .code-multiline {
+    display: block;
+    background: white;
+    border: solid 1px #dedede;
+    padding: 0.7em 1em;
+    font-size: 0.9em;
+    overflow-x: auto;
+  }
+  .hashtag {
+    display: inline-block;
+    color: white;
+    background: #b8bfc2;
+    padding: 0em 0.5em;
+    border-radius: 1em;
+    text-indent: 0;
+  }
+  .hashtag a {
+    color: #fff;
+  }
+  .address a {
+    color: #545454;
+    background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0) 50%,
+      #0da35e 50%
+    );
+    background-repeat: repeat-x;
+    background-size: 2px 2px;
+    background-position: 0 1.05em;
+  }
+  .address svg {
+    position: relative;
+    top: 0.2em;
+    display: inline-block;
+    margin-right: 0.2em;
+  }
+  .color-preview {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    border: solid 1px rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+    margin-right: 0.1em;
+    position: relative;
+    top: 0.2em;
+    white-space: nowrap;
+  }
+  .color-code {
+    margin-right: 0.2em;
+    font-family: "Menlo-Regular";
+    font-size: 0.9em;
+  }
+  .color-hash {
+    opacity: 0.4;
+  }
+  .ordered-list-number {
+    color: color(lists);
+    text-align: right;
+    display: inline-block;
+    min-width: 1em;
+  }
+  .arrow svg {
+    position: relative;
+    top: 0.08em;
+    display: inline-block;
+    margin-right: 0.15em;
+    margin-left: 0.15em;
+  }
+  .arrow svg #rod {
+    stroke: #545454;
+  }
+  .arrow svg #point {
+    fill: #545454;
+  }
+  mark {
+    color: inherit;
+    display: inline;
+    padding: 0.2em 0.5em;
+    background-color: color(highlights);
+  }
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  
+  
+   /* The switch - the box around the slider */
+   .switch {
+    position: relative;
+    display: inline-block;
+    width: 30px;
+    height: 17px;
+  }
+  
+  /* Hide default HTML checkbox */
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* The slider */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 13px;
+    width: 13px;
+    left: 2px;
+    bottom: 2px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: color(links);
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(13px);
+    -ms-transform: translateX(13px);
+    transform: translateX(13px);
+  }
+  
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  } 
+  
+  /* Add a black background color to the top navigation */
+  .topnav {
+    background-color: color(navbar);
+    overflow: hidden;
+  }
+  
+  /* Style the links inside the navigation bar */
+  .topnav a {
+    float: left;
+    color: color(primary);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  /* Change the color of links on hover */
+  .topnav a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+  /* Add a color to the active/current link */
+  .topnav a.active {
+    background-color: color(lists);
+    color: white;
+  }
