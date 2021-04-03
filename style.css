@@ -511,7 +511,7 @@ input:checked + .slider:before {
 
 /* Add a black background color to the top navigation */
 .topnav {
-  background-color: #fcfcfc;
+  background-color: #1F1F22;
   overflow: hidden;
 }
 
