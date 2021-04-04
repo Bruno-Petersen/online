@@ -1,4 +1,83 @@
-
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
 video {
   margin: 0;
   padding: 0;
@@ -10,6 +89,7 @@ video {
 html {
   line-height: 1;
 }
+ol,
 ul {
   list-style: none;
 }
@@ -17,6 +97,8 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+caption,
+th,
 td {
   text-align: left;
   font-weight: normal;
@@ -26,6 +108,9 @@ q,
 blockquote {
   quotes: none;
 }
+q:before,
+q:after,
+blockquote:before,
 blockquote:after {
   content: "";
   content: none;
@@ -33,6 +118,18 @@ blockquote:after {
 a img {
   border: none;
 }
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
 summary {
   display: block;
 }
@@ -91,9 +188,13 @@ hr {
   background-color: #dedede;
   margin: -1px auto 1.57143em auto;
 }
+ul,
 ol {
   margin-bottom: 0.31429em;
 }
+ul ul,
+ul ol,
+ol ul,
 ol ol {
   margin-bottom: 0px;
 }
@@ -125,24 +226,47 @@ code {
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-
+.sf_code_string,
+.sf_code_selector,
+.sf_code_attr-name,
+.sf_code_char,
+.sf_code_builtin,
 .sf_code_inserted {
   color: #d33905;
 }
-
+.sf_code_comment,
+.sf_code_prolog,
+.sf_code_doctype,
 .sf_code_cdata {
   color: #838383;
 }
+.sf_code_number,
 .sf_code_boolean {
   color: #0e73a2;
 }
-
+.sf_code_keyword,
+.sf_code_atrule,
+.sf_code_rule,
+.sf_code_attr-value,
+.sf_code_function,
+.sf_code_class-name,
+.sf_code_class,
+.sf_code_regex,
+.sf_code_important,
+.sf_code_variable,
 .sf_code_interpolation {
   color: #0e73a2;
 }
+.sf_code_property,
+.sf_code_tag,
+.sf_code_constant,
+.sf_code_symbol,
 .sf_code_deleted {
   color: #1b00ce;
 }
+.sf_code_macro,
+.sf_code_entity,
+.sf_code_operator,
 .sf_code_url {
   color: #920448;
 }
@@ -320,71 +444,6 @@ img {
   height: auto;
 }
 
-
-
- /* The switch - the box around the slider */
- .switch {
-  position: relative;
-  display: inline-block;
-  width: 30px;
-  height: 17px;
-}
-
-/* Hide default HTML checkbox */
-.switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-/* The slider */
-.slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ccc;
-  -webkit-transition: .4s;
-  transition: .4s;
-}
-
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 13px;
-  width: 13px;
-  left: 2px;
-  bottom: 2px;
-  background-color: white;
-  -webkit-transition: .4s;
-  transition: .4s;
-}
-
-input:checked + .slider {
-  background-color: #2196F3;
-}
-
-input:focus + .slider {
-  box-shadow: 0 0 1px #2196F3;
-}
-
-input:checked + .slider:before {
-  -webkit-transform: translateX(13px);
-  -ms-transform: translateX(13px);
-  transform: translateX(13px);
-}
-
-/* Rounded sliders */
-.slider.round {
-  border-radius: 34px;
-}
-
-.slider.round:before {
-  border-radius: 50%;
-} 
-
 /* Add a black background color to the top navigation */
 .topnav {
   background-color: #1F1F22;
@@ -411,4 +470,46 @@ input:checked + .slider:before {
 .topnav a.active {
   background-color: #e06e73;
   color: white;
+}
+
+input[type=checkbox]{
+  height: 0;
+  width: 0;
+  visibility: hidden;
+}
+
+label {
+  cursor: pointer;
+  text-indent: -9999px;
+  width: 200px;
+  height: 100px;
+  background: grey;
+  display: block;
+  border-radius: 100px;
+  position: relative;
+}
+
+label:after {
+  content: '';
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 90px;
+  height: 90px;
+  background: #fff;
+  border-radius: 90px;
+  transition: 0.3s;
+}
+
+input:checked + label {
+  background: #bada55;
+}
+
+input:checked + label:after {
+  left: calc(100% - 5px);
+  transform: translateX(-100%);
+}
+
+label:active:after {
+  width: 130px;
 }

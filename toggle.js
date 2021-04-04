@@ -1,18 +1,29 @@
 var checkbox = document.querySelector('input[name=theme]');
-console.log("triggeerreed")
 checkbox.addEventListener('change', function() {
     if(this.checked) {
-        trans()
-        document.documentElement.setAttribute('data-theme', 'dark')
+        document.documentElement.setAttribute('href', 'dark')
     } else {
-        trans()
-        document.documentElement.setAttribute('data-theme', 'light')
+        document.documentElement.setAttribute('href', 'light')
     }
 })
 
-let trans = () => {
-    document.documentElement.classList.add('transition');
-    window.setTimeout(() => {
-        document.documentElement.classList.remove('transition')
-    }, 1000)
-}
+
+
+
+// var checkbox = document.querySelector('input[name=theme]');
+// checkbox.addEventListener('change', function() {
+//     if(this.checked) {
+//         trans()
+//         document.documentElement.setAttribute('data-theme', 'dark')
+//     } else {
+//         trans()
+//         document.documentElement.setAttribute('data-theme', 'light')
+//     }
+// })
+
+// let trans = () => {
+//     document.documentElement.classList.add('transition');
+//     window.setTimeout(() => {
+//         document.documentElement.classList.remove('transition')
+//     }, 1000)
+// }
