@@ -81,6 +81,13 @@ h3 {
   margin-bottom: 0.47143em;
 }
 
+hr {
+  height: 1px;
+  border: 0;
+  background-color: #dedede;
+  margin: -1px auto 1.57143em auto;
+}
+
 ol li:before {
   content: counter(ol_counter) ".";
   counter-increment: ol_counter;
@@ -162,7 +169,7 @@ mark {
 }
 
 /* Style the links inside the navigation bar */
-.topnav an {
+.topnav a {
   float: left;
   color: var(--bg);
   text-align: center;
@@ -172,13 +179,13 @@ mark {
 }
 
 /* Change the color of links on hover */
-.topnav an:hover {
+.topnav a:hover {
   background-color: #ddd;
   color: black;
 }
 
 /* Add a color to the active/current link */
-.topnav an.active {
+.topnav a.active {
   background-color: var(--color-lists);
   color: white;
 }
