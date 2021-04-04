@@ -1,6 +1,6 @@
 html {
   height: 100%;
-  font-family: 'Montserrat';
+  font-family: 'AvenirNext-Regular';
   display: -ms-grid;
   display: grid;
   -webkit-box-align: center;
@@ -9,19 +9,30 @@ html {
   justify-items: center;
   --bg: #FCFCFC;
   --bg-panel: #EBEBEB;
-  --color-headings: #0077FF;
+  --color-headings: #333;
   --color-text: #333333;
+  --color-lists: #e06e73;
+  --color-links:#de4c4f;
+  --color-highlight: #e5ffc0;
+  --color-navbar:#1F1F22;
 }
 
 html[data-theme='dark'] {
-  --bg: #333333;
+  --bg: #1F1F22;
   --bg-panel: #434343;
-  --color-headings: #3694FF;
-  --color-text: #B5B5B5;
+  --color-headings: #CAD7E0;
+  --color-text: #CAD7E0;
+  --color-lists: #78BBE5;
+  --color-links: #78BBE5;
+  --color-highlight: #293E8D;
+  --color-navbar:#2067a0;
 }
 
 body {
-  background-color: var(--bg);
+  background: var(--bg);
+  color: var(--color-text);
+  text-rendering: optimizeLegibility;
+  font-family: "AvenirNext-Regular";
 }
 
 .container {
@@ -38,12 +49,53 @@ body {
       grid-template-areas: "title switch" "content content";
 }
 
-.container h1 {
-  margin: 0;
-  color: var(--color-headings);
+a {
+  color: var(--color-links);
+  text-decoration: none;
 }
 
-.container p {
+h1 {
+  font-family: "AvenirNext-Medium";
+  color: --color-headings;
+  font-size: 1.6em;
+  line-height: 1.3em;
+  margin-bottom: 0.78571em;
+}
+
+h2 {
+  font-family: "AvenirNext-Medium";
+  color: --color-headings;
+  font-size: 1.3em;
+  line-height: 1em;
+  margin-bottom: 0.62857em;
+}
+
+h3 {
+  font-family: "AvenirNext-Medium";
+  color: --color-headings;
+  font-size: 1.15em;
+  line-height: 1em;
+  margin-bottom: 0.47143em;
+}
+
+p {
+  margin-bottom: 1.57143em;
+  -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto;
+}
+
+ol li:before {
+  content: counter(ol_counter) ".";
+  counter-increment: ol_counter;
+  color: color(lists);
+  text-align: right;
+  display: inline-block;
+  min-width: 1em;
+  margin-right: 0.5em;
+}
+
+p {
   color: var(--color-text);
   -ms-grid-row: 2;
   -ms-grid-column: 1;
@@ -52,12 +104,74 @@ body {
   font-size: 1.1em;
   line-height: 1.8em;
   margin-top: 2em;
+  margin-bottom: 1.57143em;
+}
+
+b,
+strong {
+  font-family: "AvenirNext-Bold";
+}
+
+i,
+em {
+  font-family: "AvenirNext-Italic";
+}
+
+code {
+  font-family: "Menlo-Regular";
+}
+
+blockquote {
+  background: var(--bg-panel);
+  margin: 0.2em;
+  padding: 0.1em;
+  border-radius: 4px;
+  display: block;
+  margin-left: 1em;
+  padding-left: 0.8em;
+  padding-right: 0.8em;
+  border-left: 0.2em solid var(--color-links);
 }
 
 input[type=checkbox] {
   height: 0;
   width: 0;
   visibility: hidden;
+}
+
+mark {
+  color: inherit;
+  display: inline;
+  padding: 0.2em 0.5em;
+  background-color: var(--color-highlight);
+}
+
+/* Add a black background color to the top navigation */
+.topnav {
+  background-color: var(--color-navbar);
+  overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav an {
+  float: left;
+  color: var(--bg);
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav an:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Add a color to the active/current link */
+.topnav an.active {
+  background-color: var(--color-lists);
+  color: white;
 }
 
 label {
@@ -102,8 +216,8 @@ html.transition,
 html.transition *,
 html.transition *:before,
 html.transition *:after {
-  -webkit-transition: all 750ms !important;
-  transition: all 750ms !important;
+  -webkit-transition: all 350ms !important;
+  transition: all 350ms !important;
   -webkit-transition-delay: 0 !important;
           transition-delay: 0 !important;
 }
