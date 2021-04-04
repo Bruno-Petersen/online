@@ -1,6 +1,8 @@
 html {
   height: 100%;
   font-family: 'AvenirNext-Regular';
+  line-height: 1.6em;
+  -webkit-text-size-adjust: 100%;
   display: -ms-grid;
   display: grid;
   -webkit-box-align: center;
@@ -33,6 +35,7 @@ body {
   color: var(--color-text);
   text-rendering: optimizeLegibility;
   font-family: "AvenirNext-Regular";
+  font-size: 18px;
 }
 
 .container {
@@ -59,7 +62,7 @@ h1 {
   color: --color-headings;
   font-size: 1.6em;
   line-height: 1.3em;
-  margin-bottom: 0.78571em;
+  margin-bottom: 0.47143em;
 }
 
 h2 {
@@ -67,7 +70,7 @@ h2 {
   color: --color-headings;
   font-size: 1.3em;
   line-height: 1em;
-  margin-bottom: 0.62857em;
+  margin-bottom: 0.47143em;
 }
 
 h3 {
@@ -76,13 +79,6 @@ h3 {
   font-size: 1.15em;
   line-height: 1em;
   margin-bottom: 0.47143em;
-}
-
-p {
-  margin-bottom: 1.57143em;
-  -webkit-hyphens: auto;
-      -ms-hyphens: auto;
-          hyphens: auto;
 }
 
 ol li:before {
@@ -103,8 +99,11 @@ p {
   grid-area: content;
   font-size: 1.1em;
   line-height: 1.8em;
-  margin-top: 2em;
-  margin-bottom: 1.57143em;
+  margin-top: 1em;
+  -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto;
+  margin-bottom: 0.47143em;
 }
 
 b,
